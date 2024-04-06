@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config()
 
 async function sendEmail(email, content) {
   try {
@@ -9,8 +10,8 @@ async function sendEmail(email, content) {
         secure:true,
         port: 465,
           auth: {
-          user:'boulevardetrading@gmail.com',
-          pass:'gexjnrjmqivvdknw'
+          user:process.env.user,
+          pass:process.env.pass
         }
       });
 
